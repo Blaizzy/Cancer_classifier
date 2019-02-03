@@ -41,7 +41,7 @@ and the second are the predicited labels
     
 # Classifier 
 
-![pred](https://github.com/Blaizzy/Cancer_classifier/img/precision_50%.png)
+![pred](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/precision_50%25.png)
 
 You can download(models/WiscosinBreastCancerClf.joblib) the model I created and use it on another dataset with the same distribution.
 
