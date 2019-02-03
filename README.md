@@ -41,7 +41,7 @@ and the second are the predicited labels
     
     
 # Data
-[!sample data](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/Screenshot%20from%202019-02-03%2018-19-32.png)
+![sample data](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/Screenshot%20from%202019-02-03%2018-19-32.png)
 
 # Classifier 
 
