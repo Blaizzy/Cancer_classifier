@@ -70,7 +70,8 @@ from helper.Data import Dataset
        Benign: 458 (65.5%)
        Malignant: 241 (34.5%)'''
 
-path = input("Path to .txt file:")
+
+path = '../Cancer_classifier/data/breast_cancer_ dataset'
 
 
 
@@ -80,12 +81,13 @@ if __name__ == '__main__':
     data = Dataset(path)
     data =  data.load()
 
-    #data.to_csv(path_or_buf='/home/prince_canuma/PycharmProjects/PythonStuff/Blog/cancer_dataset.csv', sep=',', encoding='utf-8')
+    data.to_csv(path_or_buf='../Cancer_classifier/data/cancer_dataset.csv', sep=',', encoding='utf-8')
 
-    #scatter = Dataset.df_scatter_plot(data) #change dtype to int64
-    #scatter = Dataset.scatter_plot()
-    #Dataset.correlation_matrix(data)
-    #Dataset.two_var_corr(data)
+    # Create ascatter diagram and a correlation matrix
+    # of all atributes to see their relation
+    scatter = Dataset.scatter_plot()
+    Dataset.correlation_matrix(data)
+   
 
     y = data['y']
 
@@ -104,11 +106,6 @@ if __name__ == '__main__':
     print(X_train.shape)
     print(y_train.shape)
 
-    # x = np.array([[1, 2, 3], [4, 5, 6]])
-    #>>> print(np.ravel(x))
-    #[1 2 3 4 5 6]
-    #returns 1D array as it is
-
 
     clf = LogisticRegression()
     model = clf.fit(X_train, y_train.values.ravel())
@@ -123,20 +120,53 @@ if __name__ == '__main__':
 
 
 
-    # Compute confusion matrix
-    cnf_matrix = confusion_matrix(y_test, pred)
-    np.set_printoptions(precision=2)
+    # Testing our classifier on our Test set
+    pred = clf.predict(X_test)
+    # Accuracy
+    # and a detailed Classification report
+    acctest = clf.score(X_test,y_test)
+    print('Model test Accuracy: ', round(accuracy_score(y_test,pred)*100,3), '%')
+    print(classification_report(y_test, pred))
 
-    classes = ['Benign', 'Malignant']
+    # Now using a class method I created you reverse the One-hot enconding 
+    # into Readable and understandable Diagnostics
+    decode = Dataset.decode_preds(pred)
 
-    # Plot non-normalized confusion matrix
-    plt.figure()
-    Dataset.plot_confusion_matrix(cnf_matrix, classes=classes,
-                          title='Confusion matrix, without normalization')
+    # Here we take our Predictions and Probability and create a EXCEL spreadsheet
+    #of our features X , our Diagnostic and Probability Distribuition
+    label = pd.DataFrame({'Diagnostic': decode}, index=X_test.index)
+    prob= pd.DataFrame(clf.predict_proba(X_test), columns=['Probabilty(Benign)','Probability(Malignant)'], index=X_test.index)
+    result = X_test.join(label)
+    result = result.join(prob['Probabilty(Benign)'])
+    result.to_csv(path_or_buf='../Cancer_classifier/data/result_cancer_dataset.csv',
+                      sep=',', encoding='utf-8')
 
-    # Plot normalized confusion matrix
-    plt.figure()
-    Dataset.plot_confusion_matrix(cnf_matrix, classes= classes, normalize=True,
-                          title='Normalized confusion matrix')
 
-    plt.show()
+    # Visualizing and understanding our models Accuracy
+    #-  Confusion matrix will help us see how many samples we are misclassifying
+
+    #There is room for improvement. 
+    #I will iteratively improve this algorithm till 99%, so follow my Github profile to be updated.
+
+     # Compute confusion matrix
+     cnf_matrix = confusion_matrix(y_test, pred)
+     np.set_printoptions(precision=2)
+
+     classes = ['Benign', 'Malignant']
+
+     # Plot non-normalized confusion matrix
+     plt.figure()
+     Dataset.plot_confusion_matrix(cnf_matrix, classes=classes,
+                              title='Confusion matrix, without normalization')
+
+     # Plot normalized confusion matrix
+     plt.figure()
+     Dataset.plot_confusion_matrix(cnf_matrix, classes= classes, normalize=True,
+                              title='Normalized confusion matrix')
+
+     plt.show()
+
+     # Saving our model for future use
+     from joblib import dump
+     dump(clf, '../Cancer_classifier/data/WiscosinBreastCancerClf.joblib') 
+
