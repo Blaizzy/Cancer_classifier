@@ -49,7 +49,7 @@ and the second are the predicited labels
 
 ![pred](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/precision_50%25.png)
 
-**My classifier is only mislabeling 8 Benign cancer samples)out 220 and mislabeling 7 (Malignant)cancer samples out of 219.**
+**My classifier is only mislabeling 8 Benign cancer samples) out of 220 and mislabeling 7 (Malignant) cancer samples out of 219.**
 There is room for improvement. 
 I will iteratively improve this algorithm till 99%, so follow my Github profile to be updated.
 
