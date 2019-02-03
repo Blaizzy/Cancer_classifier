@@ -43,7 +43,9 @@ and the second are the predicited labels
 
 ![pred](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/precision_50%25.png)
 
-You can download(models/WiscosinBreastCancerClf.joblib) the model I created and use it on another dataset with the same distribution.
+**My classifier is only mislabeling 8 Benign cancer samples)out 220 and mislabeling 7 (Malignant)cancer samples out of 219.**
 
-You can run the classifier via the notebook(models/BreastCancer(Sklearn).ipynb)
+You can download the model I created and use it on another dataset with the same distribution. link for download[]
+
+You can run the classifier via this notebook [models/BreastCancer(Sklearn)](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/models/BreastCancer(Sklearn).ipynb)
 
