@@ -11,7 +11,7 @@
      K. P. Bennett & O. L. Mangasarian: "Robust linear programming
      discrimination of two linearly inseparable sets", Optimization Methods
     and Software 1, 1992, 23-34 (Gordon & Breach Science Publishers
-#Class Dataset
+# Class Dataset
     I create a Class(Data.py) optimized for this Dataset
     All the Data Preprocessing and Postprocessing is done automatically for you. 
     You can contribute by forking this repo and extend the class to suit your needs.
