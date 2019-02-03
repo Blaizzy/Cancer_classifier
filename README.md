@@ -41,7 +41,8 @@ and the second are the predicited labels
     
     
 # Data
-[data](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/data/breast_cancer_dataset.csv)
+[!sample data](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/Screenshot%20from%202019-02-03%2018-19-32.png)
+
 # Classifier 
 
 ![pred](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/precision_50%25.png)
