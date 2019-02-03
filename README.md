@@ -39,13 +39,16 @@ classes (Benign or Malignant)
 **confusion_matrix(*true_labels, *predictions)**: recieves two arguments, the first is an array of the true labels
 and the second are the predicited labels
     
+    
+# Data
+[data](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/data/breast_cancer_dataset.csv)
 # Classifier 
 
 ![pred](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/img/precision_50%25.png)
 
 **My classifier is only mislabeling 8 Benign cancer samples)out 220 and mislabeling 7 (Malignant)cancer samples out of 219.**
 
-You can download the model I created and use it on another dataset with the same distribution. link for download[]
+You can download the model I created and use it on another dataset with the same distribution. link for [download](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/models/saved_models/WiscosinBreastCancerClf.joblib)
 
 You can run the classifier via this notebook [models/BreastCancer(Sklearn)](https://github.com/Blaizzy/Cancer_classifier/blob/Blaizzy-beta/models/BreastCancer(Sklearn).ipynb)
 
