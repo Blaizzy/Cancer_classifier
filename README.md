@@ -19,11 +19,13 @@ You can contribute by forking this repo and extend the class to suit your needs.
     
 Please don't forget to cite this repo. :+1:
 
----------------- Methods ---------------------
+## Methods
+
 **load()**: Gets the text in the .txt file, creates a pandas Dataframe(DF),
 copies it to the class variable df and returns DataFrame(DF).
 
----------------- Class Methods----------------------
+## Class Methods
+
 **scatter_plot()**: uses the copied pandas DF and creates a scatter plot with showing correlation and histogram
 of all columns.
 
