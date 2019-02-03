@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
-from Blog.Data import Dataset
+from helper.Data import Dataset
 
 '''Past Usage:
     Attributes 2 through 10 have been used to represent instances.
